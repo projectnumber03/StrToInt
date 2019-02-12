@@ -1,17 +1,14 @@
 public class Integer {
     public static int valueOf(String str) throws NumberFormatException {
+        return str.charAt(0) == '-' ? convert(str, 1, -1) : convert(str, 0, 1);
+    }
+
+    public static int convert(String str, int k1, int k2){
         int summ = 0;
-        if (str.charAt(0) == '-') {
-            for (int i = 1; i < str.length(); i++) {
-                summ += charToInt(str.charAt(i)) * Math.pow(10, str.length() - i - 1);
-            }
-            return -summ;
-        } else {
-            for (int i = 0; i < str.length(); i++) {
-                summ += charToInt(str.charAt(i)) * Math.pow(10, str.length() - i - 1);
-            }
-            return summ;
+        for (int i = k1; i < str.length(); i++) {
+            summ += charToInt(str.charAt(i)) * Math.pow(10, str.length() - i - 1);
         }
+        return k2 * summ;
     }
 
     public static int charToInt(char chr) throws NumberFormatException {
