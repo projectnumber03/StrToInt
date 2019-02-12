@@ -12,7 +12,6 @@ public class Integer {
             }
             return summ;
         }
-
     }
 
     public static int charToInt(char chr) throws NumberFormatException {
