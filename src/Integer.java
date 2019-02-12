@@ -17,8 +17,8 @@ public class Integer {
     }
 
     public static int charToInt(char chr) throws NumberFormatException {
-        if ((int) chr > 48 && (int) chr < 57) {
-            return (int) chr - 48;
+        if (chr > '0' && chr < '9') {
+            return (int) chr - '0';
         } else throw new NumberFormatException();
     }
 }
