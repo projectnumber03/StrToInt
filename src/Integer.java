@@ -13,7 +13,7 @@ public class Integer {
     }
 
     public static int charToInt(char chr) throws NumberFormatException {
-        if (chr >= '0' && chr <= '9') return (int) chr - '0';
+        if (chr >= '0' && chr <= '9') return chr - '0';
         throw new NumberFormatException();
     }
 }
